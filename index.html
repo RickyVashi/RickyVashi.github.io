@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ricky Vashi — Full Stack Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- Custom cursor -->
+<div id="cursor"></div>
+<div id="cursor-follower"></div>
+
+<!-- Loader -->
+<div id="loader">
+  <div class="loader-inner">
+    <div class="loader-bar"><div class="loader-fill"></div></div>
+    <div class="loader-text">Loading Portfolio<span class="dots">...</span></div>
+  </div>
+</div>
+
+<!-- Navigation -->
+<nav id="navbar">
+  <div class="nav-logo">RV</div>
+  <ul class="nav-links">
+    <li><a href="#hero" class="nav-link active" data-section="hero">Home</a></li>
+    <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+    <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+    <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
+    <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+    <li><a href="#education" class="nav-link" data-section="education">Education</a></li>
+    <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+  </ul>
+  <div class="nav-indicator"></div>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+    <!-- Sun icon (shown in dark mode) -->
+    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="17" height="17"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    <!-- Moon icon (shown in light mode) -->
+    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+  </button>
+  <button class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="#hero" onclick="closeMobile()">Home</a></li>
+    <li><a href="#about" onclick="closeMobile()">About</a></li>
+    <li><a href="#skills" onclick="closeMobile()">Skills</a></li>
+    <li><a href="#experience" onclick="closeMobile()">Experience</a></li>
+    <li><a href="#projects" onclick="closeMobile()">Projects</a></li>
+    <li><a href="#education" onclick="closeMobile()">Education</a></li>
+    <li><a href="#contact" onclick="closeMobile()">Contact</a></li>
+  </ul>
+</div>
+
+<!-- ===== HERO ===== -->
+<section id="hero">
+  <canvas id="heroCanvas"></canvas>
+  <div class="hero-content">
+    <div class="hero-badge reveal-up" style="--d:0s">
+      <span class="badge-dot"></span>
+      Available for opportunities
+    </div>
+    <h1 class="hero-name reveal-up" style="--d:0.1s">
+      <span class="line">Ricky</span>
+      <span class="line accent">Vashi</span>
+    </h1>
+    <p class="hero-role reveal-up" style="--d:0.2s">
+      Full-Stack Developer &nbsp;·&nbsp; M.Tech Gold Medalist &nbsp;·&nbsp; Surat, India
+    </p>
+    <p class="hero-tagline reveal-up" style="--d:0.3s">
+      React &amp; Vue on the front. Node.js on the back. Currently at Phonon.io.
+    </p>
+    <div class="hero-cta reveal-up" style="--d:0.4s">
+      <a href="#projects" class="btn-primary">View Projects</a>
+      <a href="#contact" class="btn-ghost">Get in Touch</a>
+    </div>
+    <div class="hero-stats reveal-up" style="--d:0.55s">
+      <div class="stat"><span class="stat-n" data-target="9.66">0</span><span class="stat-s">/10</span><p>B.E. CGPA</p></div>
+      <div class="stat-div"></div>
+      <div class="stat"><span class="stat-n" data-target="9.20">0</span><span class="stat-s">/10</span><p>M.Tech CGPA</p></div>
+      <div class="stat-div"></div>
+      <div class="stat"><span class="stat-n" data-target="3">0</span><span class="stat-s">+</span><p>Internships</p></div>
+      <div class="stat-div"></div>
+      <div class="stat"><span class="stat-n" data-target="6">0</span><span class="stat-s">+</span><p>Projects</p></div>
+      <div class="stat-div"></div>
+      <div class="stat"><span class="stat-n" data-target="2">0</span><span class="stat-s">×</span><p>Gold Medals</p></div>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about">
+  <div class="container">
+    <div class="section-label reveal-up">About Me</div>
+    <div class="about-grid">
+      <div class="about-left reveal-left">
+        <div class="about-avatar">
+          <div class="avatar-ring ring1"></div>
+          <div class="avatar-ring ring2"></div>
+          <div class="avatar-core">RV</div>
+        </div>
+      </div>
+      <div class="about-right reveal-right">
+        <h2 class="section-title">Full-Stack Developer<br><em>Based in India</em></h2>
+        <p class="about-text">
+          I'm a full-stack developer pursuing M.Tech in Computer Science at Nirma University, where I ranked 1st in Semester 1 and 2. I hold a B.E. gold medal from SCET, Surat — graduating with a 9.66 CGPA.
+        </p>
+        <p class="about-text">
+          At Phonon.io, I work on authentication infrastructure, frontend migrations (Angular → React), and internal tooling. My personal projects span blockchain-based traceability systems, real-time dashboards, and ML forecasting models.
+        </p>
+        <div class="about-info-grid">
+          <div class="info-item"><span class="info-label">Location</span><span class="info-val">Surat, Gujarat, India</span></div>
+          <div class="info-item"><span class="info-label">Degree</span><span class="info-val">M.Tech — CSE (2024–26)</span></div>
+          <div class="info-item"><span class="info-label">Email</span><span class="info-val">rickyvashi422@gmail.com</span></div>
+          <div class="info-item"><span class="info-label">Languages</span><span class="info-val">English, Gujarati, Hindi</span></div>
+        </div>
+        <div class="about-links">
+          <a href="https://github.com/RickyVashi" target="_blank" class="social-btn">GitHub</a>
+          <a href="https://www.linkedin.com/in/ricky-vashi-04a1811bb" target="_blank" class="social-btn">LinkedIn</a>
+          <a href="https://leetcode.com/u/Ricky42/" target="_blank" class="social-btn">LeetCode</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SKILLS ===== -->
+<section id="skills">
+  <div class="container">
+    <div class="section-label reveal-up">Technical Expertise</div>
+    <h2 class="section-title reveal-up">Skills &amp; Technologies</h2>
+    <div class="skills-categories">
+      <div class="skills-cat reveal-up" style="--d:0.05s">
+        <div class="cat-header">
+          <div class="cat-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <h3>Frontend</h3>
+        </div>
+        <div class="skills-tags">
+          <span>React.js</span><span>Vue.js</span><span>Next.js</span><span>Nuxt.js</span><span>JavaScript</span><span>Tailwind CSS</span><span>Bootstrap</span>
+        </div>
+      </div>
+      <div class="skills-cat reveal-up" style="--d:0.1s">
+        <div class="cat-header">
+          <div class="cat-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+          </div>
+          <h3>Backend</h3>
+        </div>
+        <div class="skills-tags">
+          <span>Node.js</span><span>Express.js</span><span>REST API</span><span>PHP</span><span>Keycloak</span><span>Socket.io</span><span>JWT</span><span>OAuth2</span>
+        </div>
+      </div>
+      <div class="skills-cat reveal-up" style="--d:0.15s">
+        <div class="cat-header">
+          <div class="cat-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+          </div>
+          <h3>Database &amp; Blockchain</h3>
+        </div>
+        <div class="skills-tags">
+          <span>MySQL</span><span>MongoDB</span><span>Ethereum</span><span>Solidity</span><span>Web3.js</span><span>MetaMask</span>
+        </div>
+      </div>
+      <div class="skills-cat reveal-up" style="--d:0.2s">
+        <div class="cat-header">
+          <div class="cat-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+          </div>
+          <h3>Languages &amp; ML</h3>
+        </div>
+        <div class="skills-tags">
+          <span>Python</span><span>Java</span><span>C / C++</span><span>XGBoost</span><span>scikit-learn</span><span>Machine Learning</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EXPERIENCE ===== -->
+<section id="experience">
+  <div class="container">
+    <div class="section-label reveal-up">Career</div>
+    <h2 class="section-title reveal-up">Work Experience</h2>
+    <div class="timeline">
+      <div class="tl-line"></div>
+
+      <div class="tl-item reveal-up" style="--d:0.05s">
+        <div class="tl-dot active"></div>
+        <div class="tl-card">
+          <div class="tl-status">Current</div>
+          <div class="tl-header">
+            <div>
+              <h3 class="tl-role">Member of Technical Staff Trainee</h3>
+              <p class="tl-company">Phonon.io Automating Communication</p>
+            </div>
+            <div class="tl-date">May 2025 — Present</div>
+          </div>
+          <ul class="tl-list">
+            <li>Joined as an intern and received a Pre-Placement Offer (PPO) based on performance, currently continuing as a full-time employee.</li>
+            <li>Integrated Keycloak authentication workflows — login, token handling, secure session management, and authorization flows.</li>
+            <li>Upgraded the authorization server frontend from Angular 1.8.3 to React 18, improving maintainability and UI performance.</li>
+            <li>Resolved critical VAPT security issues related to session hijacking and token termination to strengthen application security.</li>
+            <li>Building a recruitment portal using React, Node.js, and MySQL with candidate management and workflow functionalities.</li>
+            <li>Designed and implemented UI components for a JSON Flow Builder using React for dynamic flow creation and visualization.</li>
+          </ul>
+          <div class="tl-tags">
+            <span>React.js</span><span>Node.js</span><span>Keycloak</span><span>Angular→React</span><span>MySQL</span><span>VAPT</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal-up" style="--d:0.1s">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-header">
+            <div>
+              <h3 class="tl-role">Full Stack Developer</h3>
+              <p class="tl-company">Digitattva Technolabs</p>
+            </div>
+            <div class="tl-date">Jan 2024 — Jul 2024</div>
+          </div>
+          <p class="tl-desc">Developed full-stack web applications using Vue.js (frontend) and Node.js (backend). Created and integrated Web APIs, managed data with MongoDB and MySQL, and shipped production-grade features end to end.</p>
+          <div class="tl-tags">
+            <span>Node.js</span><span>Vue.js</span><span>MySQL</span><span>MongoDB</span><span>REST API</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal-up" style="--d:0.15s">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-header">
+            <div>
+              <h3 class="tl-role">Web Developer</h3>
+              <p class="tl-company">Infusion Infotech</p>
+            </div>
+            <div class="tl-date">Jul 2023 — Aug 2023</div>
+          </div>
+          <p class="tl-desc">Built and customized websites, managed relational databases, and integrated external APIs. Hands-on experience with WordPress, PHP, and MySQL.</p>
+          <div class="tl-tags">
+            <span>PHP</span><span>WordPress</span><span>MySQL</span><span>API</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROJECTS ===== -->
+<section id="projects">
+  <div class="container">
+    <div class="section-label reveal-up">Portfolio</div>
+    <h2 class="section-title reveal-up">Featured Projects</h2>
+    <div class="projects-grid">
+
+      <div class="proj-card featured reveal-up" style="--d:0.05s" data-href="https://github.com/RickyVashi/Blockchain-for-Diamond-Traceability">
+        <div class="proj-glow"></div>
+        <div class="proj-number">01</div>
+        <div class="proj-icon-big"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
+        <h3 class="proj-name">Diamond Traceability — Blockchain</h3>
+        <p class="proj-desc">M.Tech thesis project. Secure diamond provenance tracking on Ethereum using Solidity smart contracts, Vue.js frontend, Web3.js integration, and MetaMask authentication. Real-time verification of authenticity.</p>
+        <div class="proj-tech"><span>Solidity</span><span>Ethereum</span><span>Vue.js</span><span>Web3.js</span><span>MongoDB</span></div>
+        <div class="proj-link">View on GitHub →</div>
+      </div>
+
+      <div class="proj-card reveal-up" style="--d:0.1s" data-href="https://github.com/RickyVashi/Student_Dashboard_Frontend">
+        <div class="proj-glow"></div>
+        <div class="proj-number">02</div>
+        <div class="proj-icon-big"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
+        <h3 class="proj-name">Student Dashboard</h3>
+        <p class="proj-desc">Responsive student portal featuring attendance tracking, task management, real-time chat via Socket.io, chart visualizations, and drag-and-drop lists.</p>
+        <div class="proj-tech"><span>Vue.js</span><span>Node.js</span><span>Socket.io</span><span>Tailwind</span></div>
+        <div class="proj-link">View on GitHub →</div>
+      </div>
+
+      <div class="proj-card reveal-up" style="--d:0.12s">
+        <div class="proj-glow"></div>
+        <div class="proj-number">03</div>
+        <div class="proj-icon-big"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+        <h3 class="proj-name">Construction Management System</h3>
+        <p class="proj-desc">Streamlines project & task tracking for contractors and sub-contractors with real-time notifications, role-based modules, and a user-friendly interface.</p>
+        <div class="proj-tech"><span>Node.js</span><span>Vue.js</span><span>MySQL</span><span>MongoDB</span></div>
+        <div class="proj-link">Team Project</div>
+      </div>
+
+      <div class="proj-card reveal-up" style="--d:0.14s" data-href="https://github.com/RickyVashi/Inventory-Demand-Forecasting">
+        <div class="proj-glow"></div>
+        <div class="proj-number">04</div>
+        <div class="proj-icon-big"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg></div>
+        <h3 class="proj-name">Inventory Demand Forecasting</h3>
+        <p class="proj-desc">ML model comparison suite: Linear Regression, Decision Tree, XGBoost, GBM, and SVM for inventory stock management and demand prediction.</p>
+        <div class="proj-tech"><span>Python</span><span>XGBoost</span><span>SVM</span><span>GBM</span><span>sklearn</span></div>
+        <div class="proj-link">View on GitHub →</div>
+      </div>
+
+      <div class="proj-card reveal-up" style="--d:0.16s" data-href="https://github.com/RickyVashi/FileManager">
+        <div class="proj-glow"></div>
+        <div class="proj-number">05</div>
+        <div class="proj-icon-big"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></div>
+        <h3 class="proj-name">File Manager App</h3>
+        <p class="proj-desc">Clean, intuitive file manager with upload, download, and organization features. Built with Nuxt.js for seamless SSR and file handling.</p>
+        <div class="proj-tech"><span>Nuxt.js</span><span>Vue.js</span><span>UI Design</span></div>
+        <div class="proj-link">View on GitHub →</div>
+      </div>
+
+      <div class="proj-card reveal-up" style="--d:0.18s" data-href="https://github.com/RickyVashi/Ecommerce/tree/master">
+        <div class="proj-glow"></div>
+        <div class="proj-number">06</div>
+        <div class="proj-icon-big"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
+        <h3 class="proj-name">E-commerce Website</h3>
+        <p class="proj-desc">Full-featured e-commerce site with product management, payment gateway integration, and clean shopping UI built on WordPress + WooCommerce.</p>
+        <div class="proj-tech"><span>PHP</span><span>WordPress</span><span>WooCommerce</span><span>MySQL</span></div>
+        <div class="proj-link">View on GitHub →</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== EDUCATION ===== -->
+<section id="education">
+  <div class="container">
+    <div class="section-label reveal-up">Academic Background</div>
+    <h2 class="section-title reveal-up">Education &amp; Awards</h2>
+    <div class="edu-grid">
+      <div class="edu-card reveal-up" style="--d:0.05s">
+        <div class="edu-year-badge">2024–2026</div>
+        <h3 class="edu-inst">Institute of Technology, Nirma University</h3>
+        <p class="edu-deg">M.Tech — Computer Science &amp; Engineering</p>
+        <div class="edu-cgpa">
+          <span class="cgpa-num">9.20</span><span class="cgpa-of">/ 10</span>
+        </div>
+        <div class="edu-rank">1st Rank — Semester 1 &amp; 2</div>
+      </div>
+      <div class="edu-card reveal-up" style="--d:0.1s">
+        <div class="edu-year-badge">2020–2024</div>
+        <h3 class="edu-inst">Sarvajanik College of Engineering &amp; Technology</h3>
+        <p class="edu-deg">B.E. — Computer Engineering (Full Time)</p>
+        <div class="edu-cgpa">
+          <span class="cgpa-num">9.66</span><span class="cgpa-of">/ 10</span>
+        </div>
+        <div class="edu-rank">Gold Medalist — Overall 1st Rank, All Branches</div>
+      </div>
+      <div class="edu-card reveal-up" style="--d:0.15s">
+        <div class="edu-year-badge">2020</div>
+        <h3 class="edu-inst">Leo School of Science &amp; Commerce, Surat</h3>
+        <p class="edu-deg">12th — GSEB</p>
+        <div class="edu-cgpa">
+          <span class="cgpa-num">82.77</span><span class="cgpa-of">%</span>
+        </div>
+      </div>
+      <div class="edu-card reveal-up" style="--d:0.2s">
+        <div class="edu-year-badge">2018</div>
+        <h3 class="edu-inst">Sungrace Vidhyalaya, Surat</h3>
+        <p class="edu-deg">10th — GSEB</p>
+        <div class="edu-cgpa">
+          <span class="cgpa-num">93.50</span><span class="cgpa-of">%</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="awards-section reveal-up" style="--d:0.1s">
+      <h3 class="awards-heading">Awards &amp; Recognition</h3>
+      <div class="awards-grid">
+        <div class="award-card">
+          <div class="award-medal"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></div>
+          <div>
+            <h4>Shri P. J. Khatiwala Gold Medal</h4>
+            <p>1st Rank in Computer Engineering — B.E. May 2024, awarded at Gold Medal Ceremony, Feb 2025</p>
+          </div>
+        </div>
+        <div class="award-card">
+          <div class="award-medal"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg></div>
+          <div>
+            <h4>Late Shailesh Marfatia Gold Medal</h4>
+            <p>Overall 1st Rank across all branches at SCET, Surat — CGPA 9.66/10</p>
+          </div>
+        </div>
+        <div class="award-card">
+          <div class="award-medal"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+          <div>
+            <h4>Certificate of Academic Excellence</h4>
+            <p>M.Tech Semester 2 — SGPA 9.19/10, Nirma University, Batch 2024–26</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact">
+  <div class="container">
+    <div class="section-label reveal-up">Let's Talk</div>
+    <h2 class="section-title reveal-up">Get In Touch</h2>
+    <p class="contact-intro reveal-up">Open to full-time roles, freelance projects, research collaborations, and interesting conversations.</p>
+    <div class="contact-grid">
+      <div class="contact-info reveal-left">
+        <div class="contact-item">
+          <div class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div>
+            <p class="ci-label">Email</p>
+            <a href="mailto:rickyvashi422@gmail.com" class="ci-val">rickyvashi422@gmail.com</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div>
+            <p class="ci-label">University Email</p>
+            <a href="mailto:24mce024@nirmauni.ac.in" class="ci-val">24mce024@nirmauni.ac.in</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.62 2.63h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.34a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div>
+            <p class="ci-label">Phone</p>
+            <a href="tel:+917990671943" class="ci-val">+91 7990671943</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div>
+            <p class="ci-label">Location</p>
+            <p class="ci-val">Surat, Gujarat, India — 394210</p>
+          </div>
+        </div>
+        <div class="social-row">
+          <a href="https://www.linkedin.com/in/ricky-vashi-04a1811bb" target="_blank" class="soc-link">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://github.com/RickyVashi" target="_blank" class="soc-link">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
+          <a href="https://leetcode.com/u/Ricky42/" target="_blank" class="soc-link">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/></svg>
+            LeetCode
+          </a>
+        </div>
+      </div>
+      <div class="contact-form-wrap reveal-right">
+        <form class="contact-form" onsubmit="handleFormSubmit(event)">
+          <div class="form-group">
+            <label for="fname">Your Name</label>
+            <input type="text" id="fname" placeholder="John Doe" required />
+          </div>
+          <div class="form-group">
+            <label for="femail">Email Address</label>
+            <input type="email" id="femail" placeholder="john@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="fsubject">Subject</label>
+            <input type="text" id="fsubject" placeholder="Project Collaboration" />
+          </div>
+          <div class="form-group">
+            <label for="fmsg">Message</label>
+            <textarea id="fmsg" rows="5" placeholder="Tell me about your project..." required></textarea>
+          </div>
+          <button type="submit" class="btn-primary form-submit">Send Message</button>
+          <p class="form-note" id="formNote"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container footer-inner">
+    <span class="footer-name">Ricky Vashi</span>
+    <span class="footer-copy">© 2025 · Built with passion &amp; code</span>
+    <a href="#hero" class="back-top">↑ Top</a>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
